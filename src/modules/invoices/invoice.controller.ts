@@ -25,7 +25,7 @@ export class InvoiceController {
 
     response.status(HttpStatus.OK).json({
       status: 'success',
-      data: data,
+      data: { invoice_url: data.invoice_url },
     });
   }
 
