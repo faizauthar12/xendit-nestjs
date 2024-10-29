@@ -7,7 +7,7 @@ import { InvoiceModule } from './modules/invoices/invoice.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/nest'),
+    MongooseModule.forRoot('mongodb://localhost/xendit-nestjs'),
     ConfigModule.forRoot(),
     InvoiceModule,
   ],

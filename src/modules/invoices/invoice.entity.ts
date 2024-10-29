@@ -1,4 +1,4 @@
-import { Prop, Schema } from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 import { IXenditInvoiceCustomer, IXenditInvoiceCustomerNotificationPreference } from 'src/models/xendit/xendit_invoice_model';
 
@@ -39,10 +39,10 @@ export class Invoice {
   @Prop()
   invoice_url: string;
 
-  @Prop()
+  @Prop({ type: Object })
   customer: IXenditInvoiceCustomer;
 
-  @Prop()
+  @Prop({ type: Object })
   CustomerNotificationPreference: IXenditInvoiceCustomerNotificationPreference;
 
   @Prop()
@@ -54,3 +54,5 @@ export class Invoice {
   @Prop()
   currency: string;
 }
+
+export const InvoiceSchema = SchemaFactory.createForClass(Invoice);
