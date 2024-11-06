@@ -24,6 +24,10 @@ export class WebhookInvoiceDto {
 
   @ApiProperty()
   @IsString()
+  status: string;
+
+  @ApiProperty()
+  @IsString()
   merchant_name: string;
 
   @ApiProperty()

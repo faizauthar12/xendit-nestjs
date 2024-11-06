@@ -36,9 +36,11 @@ export class InvoiceController {
     @Res() response: Response,
   ) {
 
+    const data = await this.invoiceService.xenditWebhook(requestBody);
+
     response.status(HttpStatus.OK).json({
       status: 'success',
-      data: requestBody,
+      data: data,
     });
   }
 }
